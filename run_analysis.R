@@ -24,7 +24,7 @@ df_full$activity<-factor(df_full$activity, labels=tolower(act_labels$V2))
 df_full$activity<-gsub("_"," ",df_full$activity)
 
 # Write the dataframe to a file
-write.table(df_full,file="CleanData.txt")
+write.table(df_full,file="CleanData.txt",row.name=FALSE)
 
 
 ## Make another dataframe with the mean for each subject and activity
@@ -33,4 +33,4 @@ subject<-rownames(df_tidy)
 df_tidy<-cbind(subject,df_tidy)
 
 # Write the subject/activity summary to a file
-write.table(df_tidy,file="SummaryData.txt")
+write.table(df_tidy,file="SummaryData.txt",row.name=FALSE)
